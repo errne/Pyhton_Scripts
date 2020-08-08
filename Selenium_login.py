@@ -10,6 +10,7 @@ cookie_button = driver.find_element(By.ID, "onetrust-accept-btn-handler")
 cookie_button.click()
 time.sleep(1)
 
+#Another way of findind element
 login_button = driver.find_element_by_xpath('//*[@id="nav-login-trigger"]')
 login_button.click()
 time.sleep(1)
@@ -18,10 +19,10 @@ file = open("secrets.txt", "r")
 user = file.readline()
 passwords = file.readline()
 
-username = driver.find_element_by_xpath('//*[@id="email"]')
+username = driver.find_element(By.ID, "email")
 username.send_keys(user)
 
-password = driver.find_element_by_xpath('//*[@id="password"]')
+password = driver.find_element(By.ID, "password")
 password.send_keys(passwords)
 
 driver.find_element_by_name("login").click()
